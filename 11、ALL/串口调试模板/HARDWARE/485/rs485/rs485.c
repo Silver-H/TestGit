@@ -333,7 +333,19 @@ void TIM2_IRQHandler(void)
 	
 }
 	
+void TIM5_IRQHandler(void)
+{
+	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) //检查指定的TIM中断发生与否:TIM 中断源 
+	{
+		TIM_ClearITPendingBit(TIM2,TIM_IT_Update);	//更新中断
+		
+		UartRxMonitor(1); ////串口接收监控
+		led1=!led1;       //指示灯
+	//delay_ms(100);
+		
+	}
 	
+}	
 			
 
 
