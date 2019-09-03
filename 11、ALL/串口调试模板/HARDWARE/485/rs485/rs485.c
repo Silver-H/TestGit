@@ -333,7 +333,7 @@ void TIM2_IRQHandler(void)
 	
 }
 	
-void TIM5_IRQHandler(void)
+void TIM55_IRQHandler(void)
 {
 	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) //检查指定的TIM中断发生与否:TIM 中断源 
 	{
